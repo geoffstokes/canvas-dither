@@ -57,6 +57,7 @@ Simple demo of image processing in Javascript using HTML5 and Canvas.
 - Added Sierra Lite dithering
 - Added Stucki dithering
 - Change spelling of greyscale to grayscale
+- Added output image scaling
 
 ## To Do
 - Add Brightness

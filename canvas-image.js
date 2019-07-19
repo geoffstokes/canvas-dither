@@ -4,15 +4,17 @@ var fileReader	= new FileReader();
 
 function draw () {
 
+	var scale = document.getElementById('rng_scale').value;
+
 	displayImage				= new Image();
 	displayImage.src			= originalImage;
 
-	displayCanvas.width			= displayImage.width;
-	displayCanvas.height		= displayImage.height;
+	displayCanvas.width			= displayImage.width * scale;
+	displayCanvas.height		= displayImage.height * scale;
 
 	displayContext				= displayCanvas.getContext('2d');
 
-	displayContext.drawImage(displayImage, 0, 0);
+	displayContext.drawImage(displayImage, 0, 0, displayImage.width * scale, displayImage.height * scale);
 
 	displayImageData			= displayContext.getImageData(0,0,displayCanvas.width,displayCanvas.height);
 
@@ -150,6 +152,15 @@ function setup () {
 			});
 		}
 
+		document.getElementById('lbl_scale').onclick = function() {
+			document.getElementById('rng_scale').focus();
+		};
+		document.getElementById('rng_scale').onchange = function() {
+			document.getElementById('num_scale').innerHTML = parseFloat(document.getElementById('rng_scale').value).toFixed(1);
+			document.getElementById('rng_scale').focus();
+			draw();
+		};
+
 		document.getElementById('rdo_dither_threshold').onclick	= function() {
 			document.getElementById('frm_threshold').style.display = 'block';
 			document.getElementById('rng_threshold').focus();
@@ -227,6 +238,11 @@ function setup () {
 			case "i".charCodeAt(0):
 			case "I".charCodeAt(0):
 				document.getElementById('fileSelect').click();
+				break;
+
+			case "s".charCodeAt(0):
+			case "S".charCodeAt(0):
+				document.getElementById('rng_scale').focus();
 				break;
 
 			case "1".charCodeAt(0):
