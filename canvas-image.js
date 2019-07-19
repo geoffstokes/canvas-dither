@@ -81,8 +81,6 @@ function draw () {
 		}
 	);
 
-	document.getElementById('num_dimensions').innerHTML = document.getElementById('displayImage').width +"&#215;"+ document.getElementById('displayImage').height;
-
 }
 
 worker.addEventListener('message', function (e) {
@@ -106,6 +104,8 @@ worker.addEventListener('message', function (e) {
 
 		imageDisplay.src	= displayCanvas.toDataURL("image/bmp");
 	}
+
+	document.getElementById('num_dimensions').innerHTML = document.getElementById('displayImage').width +"&#215;"+ document.getElementById('displayImage').height;
 
 }, false);
 
