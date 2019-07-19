@@ -1,5 +1,5 @@
 html,body {
-	font-family:		"Lucida Grande", "Lucida Sans", Helvetica, sans-serif;
+	font-family:		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-size:			12px;
 	padding:			0;
 	background-color:	#ededed;
@@ -12,7 +12,7 @@ html,body {
 }
 
 #imageWell {
-	background-color:	#ededed;
+	background-color:	#fff;
 	display:			inline-block;
 	padding:			1em;
 	border:				1px solid #7c7c7c;
@@ -33,11 +33,12 @@ dl.preferences {
 	background-color:	#e5e5e5;
 	box-shadow:			0 0.2em 0.2em #AAA inset;
 	border-radius:		0.5em;
+	overflow:			auto;
 }
 
 dl.preferences dt {
 	text-align:			right;
-	clear:				left;
+	clear:				both;
 	float:				left;
 	width:				250px;
 	margin:				0;
@@ -54,4 +55,24 @@ dl.preferences dd {
 
 dl.preferences dd label {
 	padding-left:		0.2em;
+}
+
+#renderbtn {
+	float: 				right;
+}
+
+input[type="range"] {
+	width: 224px;
+}
+
+#frm_threshold,
+#frm_shades,
+#frm_singlechannel,
+#frm_replace_colours {
+	display: none;
+}
+
+em {
+	font-style: normal;
+	text-decoration: underline;
 }

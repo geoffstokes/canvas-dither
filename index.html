@@ -11,40 +11,138 @@
 		</div>
 	</div>
 	<dl class="preferences">
-		<dt>Custom Image</dt>
+		<dt><label for="fileSelect">Custom <em>I</em>mage</label></dt>
 		<dd>
 			<input type="file" name="fileSelect" id="fileSelect" />
 		</dd>
-		<dt>Greyscale Conversion Method</dt>
+		<dt>Grayscale Method<br/>(alt+number)</dt>
 		<dd>
-			<input type="radio" name="greyscale_method" id="rdo_greyscale_luminance" value="Luminance" checked="true" /><label for="rdo_greyscale_luminance">Luminance</label><br/>
-			<input type="radio" name="greyscale_method" id="rdo_greyscale_average" value="RGB Average" /><label for="rdo_greyscale_average">RGB Average</label><br/>
-			<input type="radio" name="greyscale_method" id="rdo_greyscale_disable" value="Disabled" /><label for="rdo_greyscale_disable">Disabled</label><br/>
+			<form name="grayscale" id="grayscale">
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_average" value="Average" /><label for="rdo_grayscale_average">Average</label><br/>
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_decomposition" value="Desaturation" /><label for="rdo_grayscale_decomposition">Decomposition</label><br/>
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_desaturation" value="Desaturation" /><label for="rdo_grayscale_desaturation">Desaturation</label><br/>
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_luminance" value="Luminance" checked="true" /><label for="rdo_grayscale_luminance">Luminance</label><br/>
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_shades" value="Shades" /><label for="rdo_grayscale_shades">Shades [<span id="num_shades">16</span>]</label><br/>
+				<span id="frm_shades">
+					<input id="rng_shades" type="range" min="2" max="32" value="16" step="1" list="mrk_shades" /><br/>
+					<datalist id="mrk_shades">
+						<option value="2" label="2">
+						<option value="4">
+						<option value="6">
+						<option value="8" label="8">
+						<option value="10">
+						<option value="12">
+						<option value="14">
+						<option value="16" label="16">
+						<option value="18">
+						<option value="20">
+						<option value="22">
+						<option value="24" label="24">
+						<option value="26">
+						<option value="28">
+						<option value="30">
+						<option value="32" label="32">
+					</datalist>
+				</span>
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_singlechannel" value="Single Channel" /><label for="rdo_grayscale_singlechannel">Single Channel [<span id="num_singlechannel">G</span>]</label><br/>
+				<span id="frm_singlechannel">
+					<input id="rng_singlechannel" type="range" min="0" max="2" value="1" step="1" list="mrk_singlechannel" /><br/>
+					<datalist id="mrk_singlechannel">
+						<option value="0" label="R">
+						<option value="1" label="G">
+						<option value="2" label="B">
+					</datalist>
+				</span>
+				<input type="radio" name="grayscale_method" id="rdo_grayscale_disable" value="Disabled" /><label for="rdo_grayscale_disable">Disabled</label><br/>
+			</form>
 		</dd>
-		<dt>Dithering Method</dt>
+		<dt>Dithering Method<br/>(number)</dt>
 		<dd>
-			<input type="radio" name="dither_method" id="rdo_dither_atkinson" value="Atkinson Dithering" checked="true" /><label for="rdo_atkinson">Atkinson Dithering</label><br/>
-			<input type="radio" name="dither_method" id="rdo_dither_threshold" value="Threshold" /><label for="rdo_threshold">Threshold</label><br/>
-			<input id="threshold" type="range" min="0" max="255" value="127" step="1" title="Brightness threshold" />
+			<form name="dithering" id="dithering">
+				<input type="radio" name="dither_method" id="rdo_dither_atkinson" value="Atkinson" checked="true" /><label for="rdo_dither_atkinson">Atkinson</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_burkes" value="Burkes" /><label for="rdo_dither_burkes">Burkes</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_falsefloydsteinberg" value="False Floyd-Steinberg" /><label for="rdo_dither_falsefloydsteinberg">False Floyd-Steinberg</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_floydsteinberg" value="Floyd-Steinberg" /><label for="rdo_dither_floydsteinberg">Floyd-Steinberg</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_jarvisjudiceninke" value="Jarvis-Judice-Ninke" /><label for="rdo_dither_jarvisjudiceninke">Jarvis-Judice-Ninke</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_sierra" value="Sierra" /><label for="rdo_dither_sierra">Sierra</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_sierratworow" value="Sierra 2-row" /><label for="rdo_dither_sierratworow">Sierra 2-row</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_sierralite" value="Sierra Lite" /><label for="rdo_dither_sierralite">Sierra Lite</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_stucki" value="Stucki" /><label for="rdo_dither_stucki">Stucki</label><br/>
+				<input type="radio" name="dither_method" id="rdo_dither_threshold" value="Threshold" /><label for="rdo_dither_threshold" id="lbl_threshold"><em>T</em>hreshold [<span id="num_threshold">127</span>]</label><br/>
+				<span id="frm_threshold">
+					<input id="rng_threshold" type="range" min="0" max="255" value="127" step="1" list="mrk_threshold" /><br/>
+					<datalist id="mrk_threshold">
+						<option value="0" label="0%">
+						<option value="15">
+						<option value="31">
+						<option value="47">
+						<option value="63" lavel="25%">
+						<option value="79">
+						<option value="95">
+						<option value="111">
+						<option value="127" label="50%">
+						<option value="143">
+						<option value="159">
+						<option value="175">
+						<option value="191" label="75%">
+						<option value="207">
+						<option value="223">
+						<option value="239">
+						<option value="255" label="100%">
+					</datalist>
+				</span>
+				<input type="radio" name="dither_method" id="rdo_dither_disable" value="Disabled" /><label for="rdo_dither_disable">Disabled</label><br/>
+			</form>
 		</dd>
-		<dt><input type="checkbox" name="replace_colours" id="chk_replace_colours" /><label for="chk_replace_colours">Replace Colours</label></dt>
+		<dt><label for="chk_replace_colours"><em>R</em>eplace Colours</label></dt>
 		<dd>
-			<label>Replace black with (R, G, B, A)</label><br/>
-			<input id="rep_black_r" type="range" min="0" max="255" value="0" step="1" /><br/>
-			<input id="rep_black_g" type="range" min="0" max="255" value="0" step="1" /><br/>
-			<input id="rep_black_b" type="range" min="0" max="255" value="0" step="1" /><br/>
-			<input id="rep_black_a" type="range" min="0" max="255" value="255" step="1" /><br/>
-			<label>Replace white with (R, G, B, A)</label><br/>
-			<input id="rep_white_r" type="range" min="0" max="255" value="255" step="1" /><br/>
-			<input id="rep_white_g" type="range" min="0" max="255" value="255" step="1" /><br/>
-			<input id="rep_white_b" type="range" min="0" max="255" value="255" step="1" /><br/>
-			<input id="rep_white_a" type="range" min="0" max="255" value="255" step="1" /><br/>
+			<form name="replace" id="replace">
+				<input type="checkbox" name="replace_colours" id="chk_replace_colours" />
+				<span id="frm_replace_colours">
+					<label>Replace black with (R, G, B, A)</label><br/>
+					<input id="rep_black_r" type="range" min="0" max="255" value="0" step="1" list="mrk_8bit" /><br/>
+					<input id="rep_black_g" type="range" min="0" max="255" value="0" step="1" list="mrk_8bit" /><br/>
+					<input id="rep_black_b" type="range" min="0" max="255" value="0" step="1" list="mrk_8bit" /><br/>
+					<input id="rep_black_a" type="range" min="0" max="255" value="255" step="1" list="mrk_8bit" /><br/>
+					<label>Replace white with (R, G, B, A)</label><br/>
+					<input id="rep_white_r" type="range" min="0" max="255" value="255" step="1" list="mrk_8bit" /><br/>
+					<input id="rep_white_g" type="range" min="0" max="255" value="255" step="1" list="mrk_8bit" /><br/>
+					<input id="rep_white_b" type="range" min="0" max="255" value="255" step="1" list="mrk_8bit" /><br/>
+					<input id="rep_white_a" type="range" min="0" max="255" value="255" step="1" list="mrk_8bit" /><br/>
+					<datalist id="mrk_8bit">
+						<option value="0" label="0">
+						<option value="15">
+						<option value="31">
+						<option value="47">
+						<option value="63" lavel="63">
+						<option value="79">
+						<option value="95">
+						<option value="111">
+						<option value="127" label="127">
+						<option value="143">
+						<option value="159">
+						<option value="175">
+						<option value="191" label="191">
+						<option value="207">
+						<option value="223">
+						<option value="239">
+						<option value="255" label="255">
+					</datalist>
+				</span>
+			</form>
 		</dd>
 		<dt>Output Format</dt>
 		<dd>
-			<input type="radio" name="output_format" id="rdo_format_png" value="PNG" checked="true" /><label for="rdo_png">PNG</label><br/>
-			<input type="radio" name="output_format" id="rdo_format_gif" value="GIF" /><label for="rdo_gif">GIF</label><br/>
+			<input type="radio" name="output_format" id="rdo_format_png" value="PNG" checked="true" /><label for="rdo_png"><em>P</em>NG</label><!-- <br/> -->
+			<input type="radio" name="output_format" id="rdo_format_gif" value="GIF" /><label for="rdo_gif"><em>G</em>IF</label><!-- <br/> -->
+			<input type="radio" name="output_format" id="rdo_format_bmp" value="BMP" /><label for="rdo_bmp"><em>B</em>MP</label><!-- <br/> -->
 		</dd>
-		<input type="submit" id="renderbtn" value="Render" /><br/>
 	</dl>
+	</form>
+<script>
+(function() {
+   // when DOM is available
+   setup();
+})();
+</script>
 </body>

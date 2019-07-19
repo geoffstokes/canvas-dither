@@ -35,7 +35,44 @@ Simple demo of image processing in Javascript using HTML5 and Canvas.
 - Tidied up some stuff, made JS create its canvas itself and render off screen
 - Added timers for performance testing
 
+### v4.0
+- Render on every change
+- Added BMP output format
+- Added shortcut keys (numbers=dithering, alt+numbers=grayscale, initial letters=some other controls)
+- Added datalist for each range slider
+- Hide sliders when not relevant
+- Fire setup only when DOM ready
+- Added Decomposition grayscale
+- Added Desaturation grayscale
+- Added Desaturation grayscale
+- Added Shades grayscale
+- Added Single Channel grayscale
+- Added Disable dithering
+- Added Burkes dithering
+- Added False Floyd-Steinberg dithering
+- Added Floyd-Steinberg dithering
+- Added Jarvis-Judice-Ninke dithering
+- Added Sierra dithering
+- Added Sierra 2-row dithering
+- Added Sierra Lite dithering
+- Added Stucki dithering
+- Change spelling of greyscale to grayscale
+
+## To Do
+- Add Brightness
+- Add Contrast
+- Add Sharpen
+- Add Saturation
+- Add Lightness
+- Add Bayer dithering
+- Add Save/Load serialised prefs to/from cookie/file
+- Fix legacy console.time warnings
+
 ## Notes
 Takes a lot of learned stuff from my [fractal-thing](https://github.com/ticky/fractal-thing) project (and improves on it significantly).
 
 Example image is by Keven Law, and [sourced from flickr](http://www.flickr.com/photos/kevenlaw/2308263346/). Image is licensed under Creative Commons Attribution-ShareAlike 2.0 Generic.
+
+Grayscale methods from [Tanner Helland PhotoDemon blog](http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/)
+
+Dithering methods from [Tanner Helland PhotoDemon blog](http://www.tannerhelland.com/4660/dithering-eleven-algorithms-source-code/)
