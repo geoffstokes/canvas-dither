@@ -78,7 +78,10 @@ function draw () {
 					white: tmpReplaceWhite
 				}
 			}
-		});
+		}
+	);
+
+	document.getElementById('num_dimensions').innerHTML = document.getElementById('displayImage').width +"&#215;"+ document.getElementById('displayImage').height;
 
 }
 

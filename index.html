@@ -15,11 +15,11 @@
 		<dd>
 			<input type="file" name="fileSelect" id="fileSelect" />
 		</dd>
-		<dt><label id="lbl_scale" for="rng_scale"><em>S</em>cale Output [<span id="num_scale">1.0</span>]</label></dt>
+		<dt><label id="lbl_scale" for="rng_scale"><em>S</em>cale Output</label></dt>
 		<dd>
 			<form name="scale" id="scale">
 				<span id="frm_scale">
-					<input id="rng_scale" type="range" min="0.5" max="3.0" value="1.0" step="0.5" list="mrk_scale" /><br/>
+					<input id="rng_scale" type="range" min="0.5" max="3.0" value="1.0" step="0.1" list="mrk_scale" /><br/>
 					<datalist id="mrk_scale">
 						<option value="0.5" label="½"/>
 						<option value="1.0" label="1"/>
@@ -28,6 +28,7 @@
 						<option value="2.5"/>
 						<option value="3.0" label="3"/>
 					</datalist>
+					[<span id="num_scale">1.0</span>] <span id="num_dimensions">512&#215;342</span>
 				</span>
 			</form>
 		</dd>
