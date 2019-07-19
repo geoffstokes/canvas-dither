@@ -54,7 +54,7 @@ function draw () {
 	}
 
 	if (window.console && window.console.time) {
-		console.log("Starting Web Worker for image (" + displayCanvas.width + "x" + displayCanvas.height + ", grayscale Method: " + tmpGrayscaleMethod + ", Dither Method: " + tmpDitherMethod + ")");
+		console.log("Starting Web Worker for image (" + displayCanvas.width + "x" + displayCanvas.height + ", Grayscale Method: " + tmpGrayscaleMethod + ", Dither Method: " + tmpDitherMethod + ")");
 		console.time("Web worker took");
 	}
 
