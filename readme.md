@@ -38,7 +38,7 @@ Simple demo of image processing in Javascript using HTML5 and Canvas.
 ### v4.0
 - Render on every change
 - Added BMP output format
-- Added shortcut keys (numbers=dithering, alt+numbers=grayscale, initial letters=some other controls)
+- Added shortcut keys (numbers=dithering, alt+numbers=grayscale, letters=some other controls)
 - Added datalist for each range slider
 - Hide sliders when not relevant
 - Fire setup only when DOM ready
