@@ -67,6 +67,7 @@ Simple demo of image processing in Javascript using HTML5 and Canvas.
 - Add Bayer dithering
 - Add Save/Load serialised prefs to/from cookie/file
 - Fix legacy console.time warnings
+- Use Uint8ClampedArray for faster drawing
 
 ## Notes
 Takes a lot of learned stuff from my [fractal-thing](https://github.com/ticky/fractal-thing) project (and improves on it significantly).
@@ -76,3 +77,7 @@ Example image is by Keven Law, and [sourced from flickr](http://www.flickr.com/p
 Grayscale methods from [Tanner Helland PhotoDemon blog](http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/)
 
 Dithering methods from [Tanner Helland PhotoDemon blog](http://www.tannerhelland.com/4660/dithering-eleven-algorithms-source-code/)
+
+## Contributors
+- [@ticky](https://github.com/ticky)
+- [@gingerbeardman](https://github.com/gingerbeardman)
